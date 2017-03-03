@@ -1,1 +1,122 @@
-<application guid="NELAVENI" version="1.0"><display name="nelaveni" categories="User Processes" /><Metadata productVersion="10" buildNo="10200" createdBy="admin" /><creation date="03-03-2017 11:06:24" authors="eStudio" schema-version="1.0" /><deployment label="Development" /><service-instances><inst name="Feeder1"><service guid="Feeder" version="4.0" /><short-description>The Feeder service is used to feed in data.</short-description><long-description>The Feeder service is used to feed data to any service to which its output port is linked. The service defines no input or output format for the messages. It can take any data as input and just sends it forward. The user can input data in the window which pops up on launching the service.</long-description><deployment nodes="fps" /><execution><debug enabled="false" port="5000" /><launchOrder-Sequence sequence="-1" /><stopOrder-Sequence sequence="-1" /></execution><outputport-instances><outputport-instance name="OUT_PORT"><description>Gives data or messages as output</description><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="ON_EXCEPTION"><description>Used as an Exception Port</description><schema root="{http://www.fiorano.com/fesb/activity/fault}Error"><file>ON_EXCEPTION.xsd</file></schema><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="1" datatype="0" enablecallout="false" /></outputport-instance></outputport-instances><logmanager logger="java.util.logging.FileHandler"><Param name="java.util.logging.FileHandler.limit">50000</Param><Param name="java.util.logging.FileHandler.dir">logs</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param><Param name="java.util.logging.FileHandler.count">4</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param></logmanager><logmodules><logmodule name="com.fiorano.services.feeder.FeederService" level="WARNING" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.feeder.transport.jms" level="WARNING" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.feeder.engine" level="WARNING" uniqueNameRequired="true" /><logmodule name="ERR_HANDLER" uniqueNameRequired="true" /><logmodule name="OUT_HANDLER" level="INFO" uniqueNameRequired="true" /></logmodules><runtime-arguments><runtime-argument name="JVM_PARAMS" mandatory="false" inmemory="false"><value> -client -DLOG_TO_STREAM=true -Xrs</value></runtime-argument><runtime-argument name="JAVA_HOME" mandatory="false" inmemory="false" /></runtime-arguments></inst></service-instances></application>
+<?xml version="1.0" encoding="UTF-8"?>
+<application guid="NELAVENI" version="1.0">
+  <display categories="User Processes" name="nelaveni"/>
+  <creation authors="eStudio" date="03-03-2017 11:06:24"/>
+  <deployment label="Development"/>
+  <service-instances>
+    <inst name="Feeder1">
+      <service guid="Feeder" version="4.0"/>
+      <short-description>The Feeder service is used to feed in data.</short-description>
+      <long-description>The Feeder service is used to feed data to any service to which its output port is linked. The service defines no input or output format for the messages. It can take any data as input and just sends it forward. The user can input data in the window which pops up on launching the service.</long-description>
+      <deployment nodes="fps"/>
+      <execution>
+        <debug enabled="false" port="5000"/>
+        <launchOrder-Sequence sequence="-1"/>
+        <stopOrder-Sequence sequence="-1"/>
+      </execution>
+      <outputport-instances>
+        <outputport-instance name="OUT_PORT">
+          <description>Gives data or messages as output</description>
+          <workflow datatype="2" type="0" enablecallout="false"/>
+          <jms>
+            <destination/>
+            <publisher>
+              <messages persistent="true"/>
+            </publisher>
+          </jms>
+        </outputport-instance>
+        <outputport-instance name="ON_EXCEPTION">
+          <description>Used as an Exception Port</description>
+          <workflow datatype="0" type="1" enablecallout="false"/>
+          <schema root="{http://www.fiorano.com/fesb/activity/fault}Error">
+            <file>ON_EXCEPTION.xsd</file>
+          </schema>
+          <jms>
+            <destination/>
+            <publisher>
+              <messages persistent="true"/>
+            </publisher>
+          </jms>
+        </outputport-instance>
+      </outputport-instances>
+      <logmanager logger="java.util.logging.FileHandler">
+        <Param name="java.util.logging.FileHandler.limit">50000</Param>
+        <Param name="java.util.logging.FileHandler.dir">logs</Param>
+        <Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param>
+        <Param name="java.util.logging.FileHandler.count">4</Param>
+        <Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param>
+      </logmanager>
+      <logmodules>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.FeederService" uniqueNameRequired="true"/>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.transport.jms" uniqueNameRequired="true"/>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.engine" uniqueNameRequired="true"/>
+        <logmodule name="ERR_HANDLER" uniqueNameRequired="true"/>
+        <logmodule level="INFO" name="OUT_HANDLER" uniqueNameRequired="true"/>
+      </logmodules>
+      <runtime-arguments>
+        <runtime-argument inmemory="false" mandatory="false" name="JVM_PARAMS">
+          <value> -client -DLOG_TO_STREAM=true -Xrs</value>
+        </runtime-argument>
+        <runtime-argument inmemory="false" mandatory="false" name="JAVA_HOME"/>
+      </runtime-arguments>
+    </inst>
+    <inst name="Feeder2">
+      <service guid="Feeder" version="4.0"/>
+      <short-description>The Feeder service is used to feed in data.</short-description>
+      <long-description>The Feeder service is used to feed data to any service to which its output port is linked. The service defines no input or output format for the messages. It can take any data as input and just sends it forward. The user can input data in the window which pops up on launching the service.</long-description>
+      <deployment nodes="fps"/>
+      <execution>
+        <debug enabled="false" port="5000"/>
+        <launchOrder-Sequence sequence="-1"/>
+        <stopOrder-Sequence sequence="-1"/>
+      </execution>
+      <outputport-instances>
+        <outputport-instance name="OUT_PORT">
+          <description>Gives data or messages as output</description>
+          <workflow datatype="2" type="0" enablecallout="false"/>
+          <jms>
+            <destination/>
+            <publisher>
+              <messages persistent="true"/>
+            </publisher>
+          </jms>
+        </outputport-instance>
+        <outputport-instance name="ON_EXCEPTION">
+          <description>Used as an Exception Port</description>
+          <workflow datatype="0" type="1" enablecallout="false"/>
+          <schema root="{http://www.fiorano.com/fesb/activity/fault}Error">
+            <file>ON_EXCEPTION.xsd</file>
+          </schema>
+          <jms>
+            <destination/>
+            <publisher>
+              <messages persistent="true"/>
+            </publisher>
+          </jms>
+        </outputport-instance>
+      </outputport-instances>
+      <logmanager logger="java.util.logging.FileHandler">
+        <Param name="java.util.logging.FileHandler.limit">50000</Param>
+        <Param name="java.util.logging.FileHandler.dir">logs</Param>
+        <Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param>
+        <Param name="java.util.logging.FileHandler.count">4</Param>
+        <Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param>
+      </logmanager>
+      <logmodules>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.FeederService" uniqueNameRequired="true"/>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.transport.jms" uniqueNameRequired="true"/>
+        <logmodule level="WARNING" name="com.fiorano.services.feeder.engine" uniqueNameRequired="true"/>
+        <logmodule name="ERR_HANDLER" uniqueNameRequired="true"/>
+        <logmodule level="INFO" name="OUT_HANDLER" uniqueNameRequired="true"/>
+      </logmodules>
+      <runtime-arguments>
+        <runtime-argument inmemory="false" mandatory="false" name="JVM_PARAMS">
+          <value> -client -DLOG_TO_STREAM=true -Xrs</value>
+        </runtime-argument>
+        <runtime-argument inmemory="false" mandatory="false" name="JAVA_HOME"/>
+      </runtime-arguments>
+    </inst>
+  </service-instances>
+  <routes/>
+  <Metadata productVersion="10" buildNo="10200" createdBy="admin"/>
+</application>
