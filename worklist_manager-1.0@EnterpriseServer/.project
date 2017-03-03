@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>worklist_manager-1.0@EnterpriseServer</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>com.fiorano.tools.studio.soa.applicationrepository.SOAOnlineApplicationNature</nature>
+		<nature>com.fiorano.tools.studio.soa.applicationrepository.SOAApplicationNature</nature>
+	</natures>
+</projectDescription>
