@@ -131,12 +131,6 @@
       </runtime-arguments>
     </inst>
   </service-instances>
-  <routes>
-    <route name="route1">
-      <source inst="Feeder1" port="OUT_PORT"/>
-      <target inst="Display1" port="IN_PORT"/>
-      <messages/>
-    </route>
-  </routes>
+  <routes/>
   <Metadata productVersion="10" buildNo="10200" createdBy="admin"/>
 </application>
