@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>simplechat-1.0@EnterpriseServer</name>
+	<name>nelaveni-1.0@EnterpriseServer</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>com.fiorano.tools.studio.soa.applicationrepository.SOAApplicationBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>com.fiorano.tools.studio.soa.applicationrepository.SOAOnlineApplicationNature</nature>
